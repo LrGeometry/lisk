@@ -81,12 +81,12 @@ __private.getByFilter = function (filter, cb) {
 			var sort_res =
 				// Nulls last
 				a[field] === b[field] ? 0 :
-				a[field] === null ? 1 :
-				b[field] === null ? -1 :
+					a[field] === null ? 1 :
+						b[field] === null ? -1 :
 				// Ascending
-				asc ? (a[field] < b[field] ? -1 : 1) :
+							asc ? (a[field] < b[field] ? -1 : 1) :
 				// Descending
-				(a[field] < b[field] ? 1 : -1);
+								(a[field] < b[field] ? 1 : -1);
 			return sort_res;
 		};
 	};
@@ -475,7 +475,7 @@ Peers.prototype.list = function (options, cb) {
 						// Matched broadhash when attempt 0
 						options.attempt === 0 ? (peer.broadhash === options.broadhash) :
 						// Unmatched broadhash when attempt 1
-						options.attempt === 1 ? (peer.broadhash !== options.broadhash) : false
+							options.attempt === 1 ? (peer.broadhash !== options.broadhash) : false
 					);
 				} else {
 					// Skip banned peers (state 0)
