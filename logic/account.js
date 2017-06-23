@@ -355,7 +355,7 @@ function Account (db, schema, logger, cb) {
 			immutable: true
 		}
 	];
-	
+
 	// Obtains fields from model
 	this.fields = this.model.map(function (field) {
 		var _tmp = {};
@@ -374,7 +374,7 @@ function Account (db, schema, logger, cb) {
 
 		return _tmp;
 	});
-	
+
 	// Obtains bynary fields from model
 	this.binary = [];
 	this.model.forEach(function (field) {
@@ -382,7 +382,7 @@ function Account (db, schema, logger, cb) {
 			this.binary.push(field.name);
 		}
 	}.bind(this));
-	
+
 	// Obtains filters from model
 	this.filter = {};
 	this.model.forEach(function (field) {
